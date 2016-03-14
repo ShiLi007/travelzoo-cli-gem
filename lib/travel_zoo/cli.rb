@@ -33,6 +33,7 @@ class TravelZoo::CLI
         deal = TravelZoo::Deal.select_deal(input.to_i) #call on the select_deal method to select the deal since all the deals scraped are saved in @@deals
         display_details(deal) #after select the deall user wants to see more, call on display_details to show the details of the deal
       elsif input === "list" 
+        TravelZoo::Deal.deals.clear
         list_deals   #call the list_deals method again if user wants to see the deal list again 
       else
         puts "Invalid input, please follow below instruction!"
